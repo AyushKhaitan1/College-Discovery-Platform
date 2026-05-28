@@ -94,12 +94,6 @@ Your app should now be running at `http://localhost:5173`!
 
 ---
 
-## 📸 Screenshots
-
-*(You can add screenshots of your application here by uploading them to the repository and linking them like this: `![Home Page](./path/to/image.png)`)*
-
----
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/AyushKhaitan1/College-Discovery-Platform/issues).
