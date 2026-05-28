@@ -1,0 +1,112 @@
+.navbar {
+  background-color: var(--card-bg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--border-color);
+  /* Glassmorphism */
+  background: rgba(var(--card-bg), 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+.navDesktop {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-weight: 500;
+}
+
+.links a:not(.btn) {
+  color: var(--text-secondary);
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.links a:not(.btn):hover {
+  color: var(--primary);
+}
+
+.themeToggle {
+  font-size: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.themeToggle:hover {
+  transform: rotate(15deg);
+  background: var(--border-color);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.3s ease-in-out;
+    align-items: stretch;
+    text-align: center;
+  }
+  
+  .linksOpen {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .navRight .themeToggle {
+    display: flex;
+  }
+}

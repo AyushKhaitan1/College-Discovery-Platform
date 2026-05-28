@@ -1,0 +1,186 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.hero {
+  text-align: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+  color: white;
+  border-radius: var(--radius-xl);
+  margin-top: -2rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--primary); /* Fallback */
+}
+
+.heroBg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: contain;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 8s linear;
+  transform: scale(1.02);
+}
+
+.activeBg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(15,23,42,0.85) 0%, rgba(79,70,229,0.7) 100%);
+  z-index: 5;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+}
+
+.searchBar {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.searchBar input {
+  width: 100%;
+  padding: 1.25rem 2rem;
+  font-size: 1.125rem;
+  border-radius: 3rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  outline: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.searchBar input:focus {
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+
+
+.filters {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  height: fit-content;
+  position: sticky;
+  top: 6rem;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .filters {
+    position: static !important;
+    margin-bottom: 2rem;
+  }
+}
+
+.filters h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filterGroup label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.filterGroup select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-color);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.filterGroup select:focus {
+  border-color: var(--primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-color);
+}
+
+.endMessage {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
